@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  /* Surfaces */
+  --background: #fbf7f2;
+  --surface: #ffffff;
+  --surface-hover: #f5efe6;
+  --border: #eae1d6;
+  --border-hover: #ddd0bf;
+
+  /* Text */
+  --foreground: #2b2420;
+  --muted: #6b6055;
+  --subtle: #a79c8e;
+
+  /* Accents */
+  --accent: #d9622b;
+  --accent-dark: #b8501f;
+  --accent-green: #4e7a51;
+
+  /* Status */
+  --status-new: #3987e5;
+  --status-progress: #d9622b;
+  --status-ready: #4e7a51;
+  --status-served: #a79c8e;
+  --status-cancelled: #c23b3b;
+
+  /* Fonts (mapped from next/font variables in layout.tsx) */
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-jakarta);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
+
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-green: var(--accent-green);
+
+  --color-status-new: var(--status-new);
+  --color-status-progress: var(--status-progress);
+  --color-status-ready: var(--status-ready);
+  --color-status-served: var(--status-served);
+  --color-status-cancelled: var(--status-cancelled);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: white;
+}
