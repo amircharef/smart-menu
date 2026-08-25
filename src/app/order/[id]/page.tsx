@@ -22,6 +22,7 @@ export default async function OrderStatusPage({
         id: order.id,
         status: order.status,
         tableNumber: order.tableNumber,
+        createdAt: order.createdAt.toISOString(),
         items: order.items.map((i) => ({
           name: i.menuItem.name,
           quantity: i.quantity,
