@@ -39,10 +39,10 @@ export default function Home() {
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <Link
-            href="/t/1"
+            href="/t"
             className="flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-white transition-transform hover:scale-[1.02] active:scale-[0.98]"
           >
-            Essayer la démo (Table 1)
+            Commander
             <ArrowRight size={16} />
           </Link>
           <Link
