@@ -2,13 +2,21 @@
 
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
-import { LayoutDashboard, LogOut, ExternalLink, ClipboardList, UtensilsCrossed } from "lucide-react";
+import {
+  LayoutDashboard,
+  LogOut,
+  ExternalLink,
+  ClipboardList,
+  UtensilsCrossed,
+  QrCode,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const links = [
   { href: "/admin", label: "Vue d'ensemble", icon: LayoutDashboard, exact: true },
   { href: "/admin/orders", label: "Commandes", icon: ClipboardList },
   { href: "/admin/menu", label: "Menu", icon: UtensilsCrossed },
+  { href: "/admin/qrcodes", label: "QR codes", icon: QrCode },
 ];
 
 export function AdminSidebar() {

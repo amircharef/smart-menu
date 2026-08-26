@@ -2,14 +2,14 @@
 
 Menu digital et prise de commande par QR code pour restaurants. Le client scanne le code sur sa table, parcourt le menu, commande — la cuisine suit chaque commande en direct sur un tableau de bord staff.
 
-**Démo live :** _à venir_
-**Espace staff (démo) :** `/admin/login`
+**Démo live :** [smart-menu-sigma.vercel.app](https://smart-menu-sigma.vercel.app)
+**Espace staff (démo) :** [smart-menu-sigma.vercel.app/admin/login](https://smart-menu-sigma.vercel.app/admin/login)
 
 ## Le concept
 
-- **Le client scanne** un QR code posé sur sa table (`/t/{numéro}`) — pas d'app à installer, pas de compte à créer.
-- **Il commande** depuis son téléphone : menu par catégories, panier, note libre pour la cuisine.
-- **Il suit sa commande** en temps réel : reçue → en préparation → prête → servie.
+- **Le client scanne** le QR code posé sur sa table (généré et imprimable depuis l'espace staff) — pas d'app à installer, pas de compte à créer.
+- **Il commande** depuis son téléphone : menu par catégories avec photos, panier, note libre pour la cuisine.
+- **Il suit sa commande** en temps réel, avec un écran de suivi animé : reçue → en préparation → prête → servie.
 - **La cuisine suit tout** sur un tableau de bord type kanban, avec mise à jour automatique.
 
 ## Stack technique
@@ -23,13 +23,14 @@ Menu digital et prise de commande par QR code pour restaurants. Le client scanne
 ## Fonctionnalités
 
 **Côté client**
-- Menu digital par catégories, filtrable, sans authentification
-- Panier persistant en session, ajustement des quantités
-- Suivi de commande en temps réel (polling léger)
+- Sélection de table (`/t`), menu digital par catégories avec photos, sans authentification
+- Panier persistant en session, ajustement des quantités, animations
+- Suivi de commande en temps réel et animé (polling léger) : reçue, en préparation, prête, servie
 
 **Côté staff** (`/admin`, protégé par mot de passe)
 - Tableau de bord des commandes actives façon kanban (Nouveau / En préparation / Prêt)
 - Gestion complète du menu : catégories et articles (CRUD), disponibilité, ordre d'affichage
+- Génération et impression des QR codes, un par table
 - Statistiques du jour : commandes, chiffre d'affaires
 
 ## Lancer le projet en local
@@ -42,4 +43,4 @@ npx tsx prisma/seed.ts
 npm run dev
 ```
 
-Le menu de démo est accessible sur `/t/1`, l'espace staff sur `/admin/login`.
+Le menu de démo est accessible sur `/t`, l'espace staff sur `/admin/login`.
